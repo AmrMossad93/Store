@@ -22,9 +22,9 @@
         <td>{{product.price}}</td>
         <td>{{product.category}}</td>
         <td>
-          <button mat-mini-fab color="primary" >
+          <a mat-mini-fab color="primary" [routerLink]="[product.id]">
             <mat-icon>visibility</mat-icon>
-          </button>
+          </a>
         </td>
       </tr>
     </ng-template>

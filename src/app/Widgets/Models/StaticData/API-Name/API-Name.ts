@@ -1,5 +1,5 @@
 export const APIName = {
   product: {
-    list: 'products'
+    product: 'products'
   }
 }

@@ -1,8 +1,10 @@
 import {NgModule} from '@angular/core';
 import {TableModule} from 'primeng/table';
+import {RatingModule} from 'primeng/rating';
 
 const primeNgModule = [
-  TableModule
+  TableModule,
+  RatingModule
 ]
 
 @NgModule({

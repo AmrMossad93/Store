@@ -1,0 +1,31 @@
+<app-card [title]="product.title">
+  <div class="card mb-3" >
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img [src]="product.image" class="img-fluid rounded-start animate__animated animate__fadeIn" [alt]="product.title">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">
+            <b>
+              Category:
+            </b>
+            {{product.category}}
+          </h5>
+          <p class="card-text">
+            <b>Description:</b>
+            {{product.description}}
+          </p>
+          <p class="card-text">
+            <b>Price:</b>
+            {{product.price}}
+          </p>
+          <p class="card-text">
+            <b>Rate:</b>
+            <p-rating [(ngModel)]="product.rating.rate"  [disabled]="true" [readonly]="true"  [cancel]="false"></p-rating>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-card>
