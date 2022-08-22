@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {IProduct} from "../../../Models/Interfaces/Product/product";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-product-list',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  productList = []
-  constructor() { }
+  productList: IProduct[] = []
+
+  constructor(private activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
+    this.activatedRoute.data.subscribe(res => {
+      this.productList = res['productList'];
+    })
   }
 
 }

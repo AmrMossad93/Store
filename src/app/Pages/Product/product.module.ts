@@ -5,6 +5,7 @@ import { ProductRoutingModule } from './product-routing.module';
 import { ProductListComponent } from './product-list/product-list.component';
 import {WidgetsModule} from "../../Widgets/widgets.module";
 import {PrimeNgModule} from "../../DesignModules/prime-ng/prime-ng.module";
+import {AngularMaterialModule} from "../../DesignModules/angular-material/angular-material.module";
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {PrimeNgModule} from "../../DesignModules/prime-ng/prime-ng.module";
     CommonModule,
     ProductRoutingModule,
     WidgetsModule,
-    PrimeNgModule
+    PrimeNgModule,
+    AngularMaterialModule
   ]
 })
 export class ProductModule { }
