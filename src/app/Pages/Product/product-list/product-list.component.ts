@@ -47,7 +47,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
   }
 
   seeMoreProducts(): void {
-    this.productService.productListLimit += this.productService.productListLimit;
+    this.productService.productListLimit += 10;
     this.productService.getProductList().subscribe(res => {
       this.productList = res
     })
