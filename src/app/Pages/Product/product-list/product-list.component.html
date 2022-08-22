@@ -1,4 +1,12 @@
 <app-card [title]="'Product List'" [subTitle]="'Here You Are Your Product List'">
+  <div class="row">
+    <div class="col-md-12">
+      <mat-toolbar >
+        <div class="spacer"></div>
+        <button mat-raised-button color="primary">Add New Product</button>
+      </mat-toolbar>
+    </div>
+  </div>
   <p-table [value]="productList">
     <ng-template pTemplate="header">
       <tr>

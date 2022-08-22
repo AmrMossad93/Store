@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main/main.component';
+import {WidgetsModule} from "../../Widgets/widgets.module";
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { MainComponent } from './main/main.component';
   ],
   imports: [
     CommonModule,
-    MainRoutingModule
+    MainRoutingModule,
+    WidgetsModule
   ]
 })
 export class MainModule { }

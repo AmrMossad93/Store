@@ -6,9 +6,13 @@ html, body {
 
 body {
   margin: 0;
+  background: rgba(63, 81, 181, 0.16);
   //font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 * {
   font-family: 'Raleway', sans-serif;
+}
+.spacer {
+  flex: 1 1 auto;
 }
