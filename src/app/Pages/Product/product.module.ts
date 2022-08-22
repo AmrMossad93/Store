@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { ProductRoutingModule } from './product-routing.module';
 import { ProductListComponent } from './product-list/product-list.component';
+import {WidgetsModule} from "../../Widgets/widgets.module";
+import {PrimeNgModule} from "../../DesignModules/prime-ng/prime-ng.module";
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import { ProductListComponent } from './product-list/product-list.component';
   ],
   imports: [
     CommonModule,
-    ProductRoutingModule
+    ProductRoutingModule,
+    WidgetsModule,
+    PrimeNgModule
   ]
 })
 export class ProductModule { }
