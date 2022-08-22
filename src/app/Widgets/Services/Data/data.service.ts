@@ -14,4 +14,8 @@ export class DataService {
   getData(apiName: string): Observable<any> {
     return this.httpClient.get(`${environment.apiEndPoint}${apiName}`);
   }
+
+  postData(apiName: string, OBJ: any): Observable<any> {
+    return this.httpClient.post(`${environment.apiEndPoint}${apiName}`, OBJ);
+  }
 }

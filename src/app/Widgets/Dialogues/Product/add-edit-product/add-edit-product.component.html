@@ -1,0 +1,83 @@
+<h1 mat-dialog-title>Add Product</h1>
+
+<form [formGroup]="productForm" (submit)="onSubmit()">
+  <div mat-dialog-content>
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Title</mat-label>
+          <input matInput formControlName="title" type="text">
+          <mat-error *ngIf="productForm.controls['title'].hasError('required')">
+            Product Title is <strong>Required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Price</mat-label>
+          <input matInput formControlName="price" type="number">
+          <mat-error *ngIf="productForm.controls['price'].hasError('required')">
+            Product Price is <strong>Required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="description" type="text"></textarea>
+          <mat-error *ngIf="productForm.controls['description'].hasError('required')">
+            Product Description is <strong>Required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Image URL</mat-label>
+          <input matInput formControlName="image" type="text">
+          <mat-error *ngIf="productForm.controls['image'].hasError('required')">
+            Product Image URL is <strong>Required</strong>
+          </mat-error>
+          <mat-error *ngIf="productForm.controls['image'].hasError('pattern')">
+            Product Image URL Must <strong>Be URL</strong>
+          </mat-error>
+          <mat-error *ngIf="productForm.controls['image'].hasError('imageError')">
+            Product Image URL is <strong>Broken</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+    </div>
+    <div class="row" *ngIf="productForm.value.image">
+      <div class="col text-center">
+        <img [src]="productForm.value.image" class="w-25 img-thumbnail" (error)="updateUrl($event)">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Category</mat-label>
+          <input matInput formControlName="category" type="text">
+          <mat-error *ngIf="productForm.controls['category'].hasError('required')">
+            Product Category is <strong>Required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+  </div>
+  <div mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close type="button" (click)="onNoClick()">No</button>
+    <button  type="submit" mat-button color="primary">Ok</button>
+  </div>
+</form>
+
