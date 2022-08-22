@@ -13,6 +13,11 @@ body {
 * {
   font-family: 'Raleway', sans-serif;
 }
+
 .spacer {
   flex: 1 1 auto;
+}
+
+.p-rating .p-rating-icon.pi-star-fill {
+  color: #3f51b5;
 }
