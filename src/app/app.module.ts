@@ -8,6 +8,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Overlay} from "@angular/cdk/overlay";
+import {NgxSpinnerModule} from "ngx-spinner";
+import {httpInterceptorProviders} from "./Interceptors";
 
 @NgModule({
   declarations: [
@@ -19,9 +21,10 @@ import {Overlay} from "@angular/cdk/overlay";
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSpinnerModule
   ],
-  providers: [ MatSnackBar,Overlay],
+  providers: [MatSnackBar, Overlay, httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule {
