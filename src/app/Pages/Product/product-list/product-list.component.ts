@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {IProduct} from "../../../Models/Interfaces/Product/product";
 import {ActivatedRoute} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
@@ -11,7 +11,7 @@ import {SnackBarService} from "../../../Widgets/Services/SnackBar/snack-bar.serv
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss']
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, OnDestroy {
   productList: IProduct[] = []
 
   constructor(private activatedRoute: ActivatedRoute, public dialog: MatDialog, private productService: ProductService, private snackBarService: SnackBarService) {
@@ -41,8 +41,19 @@ export class ProductListComponent implements OnInit {
     this.productService.onAddProduct().subscribe(res => {
     }, error => {
       this.snackBarService.openSnackBar('Error Happened', 'Sorry')
-    }, ()=>{
+    }, () => {
       this.snackBarService.openSnackBar('Added Successfully', 'Product')
     })
+  }
+
+  seeMoreProducts(): void {
+    this.productService.productListLimit += this.productService.productListLimit;
+    this.productService.getProductList().subscribe(res => {
+      this.productList = res
+    })
+  }
+
+  ngOnDestroy() {
+    this.productService.productListLimit = 10
   }
 }
